@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="d33-gm-5Ia">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Wisata Table View Controller-->
+        <scene sceneID="lLw-dZ-8ZT">
+            <objects>
+                <tableViewController id="d33-gm-5Ia" customClass="WisataTableViewController" customModule="TableWisata" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="qod-Sp-Vgu">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <navigationBar key="tableHeaderView" contentMode="scaleToFill" id="hLa-oG-FsW">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <items>
+                                <navigationItem title="Wisata Pantai " id="njF-HA-LgN"/>
+                            </items>
+                        </navigationBar>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellWisata" id="dWl-Bb-FS4">
+                                <rect key="frame" x="0.0" y="72" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="dWl-Bb-FS4" id="1zY-7G-crS">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="d33-gm-5Ia" id="q8e-Av-n00"/>
+                            <outlet property="delegate" destination="d33-gm-5Ia" id="Fns-hz-xPj"/>
+                        </connections>
+                    </tableView>
+                    <connections>
+                        <segue destination="R9Q-Ln-GtD" kind="modal" identifier="passDataDetail" id="DbP-EQ-YvP"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IzA-Q7-fKj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="719" y="660"/>
+        </scene>
+        <!--Map Kit View Controller-->
+        <scene sceneID="7CV-o7-1kM">
+            <objects>
+                <viewController storyboardIdentifier="detailMap" id="2nY-bo-Ygf" customClass="MapKitViewController" customModule="TableWisata" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="01y-8i-XqU">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="PDZ-6X-vvM">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </mapView>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bTQ-Pr-isV">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="Detail Map" id="YqO-Fh-aWE">
+                                        <barButtonItem key="leftBarButtonItem" title=" Back" id="n5n-8Q-WGa">
+                                            <connections>
+                                                <segue destination="d33-gm-5Ia" kind="modal" id="2ZU-PV-Uxa"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="PDZ-6X-vvM" firstAttribute="leading" secondItem="uTB-l1-LFP" secondAttribute="leading" id="LN3-rR-Vol"/>
+                            <constraint firstItem="PDZ-6X-vvM" firstAttribute="trailing" secondItem="uTB-l1-LFP" secondAttribute="trailing" id="R0q-Ru-ASv"/>
+                            <constraint firstItem="PDZ-6X-vvM" firstAttribute="bottom" secondItem="uTB-l1-LFP" secondAttribute="bottom" id="b5D-6t-RRp"/>
+                            <constraint firstItem="PDZ-6X-vvM" firstAttribute="top" secondItem="01y-8i-XqU" secondAttribute="top" id="xX1-MJ-qED"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="uTB-l1-LFP"/>
+                    </view>
+                    <connections>
+                        <outlet property="petaWisata" destination="PDZ-6X-vvM" id="tQp-2k-CXd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sKM-Rb-fv8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1346" y="1088"/>
+        </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="RN8-Xd-03F">
+            <objects>
+                <viewController storyboardIdentifier="detailView" id="R9Q-Ln-GtD" customClass="DetailViewController" customModule="TableWisata" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Idn-og-bkf">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="N05-AC-YPs">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="Detail Wisata" id="Khi-LK-CBS">
+                                        <barButtonItem key="leftBarButtonItem" title="Back" id="2uf-nV-hjM">
+                                            <connections>
+                                                <segue destination="d33-gm-5Ia" kind="modal" id="b0W-2B-jCv"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="PANTAI Sanur Bali" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8QV-SF-i3H">
+                                <rect key="frame" x="86" y="66" width="202" height="63"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Pantai" translatesAutoresizingMaskIntoConstraints="NO" id="5Je-2z-lki">
+                                <rect key="frame" x="16" y="137" width="343" height="207"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="rd1-OG-lk1"/>
+                    </view>
+                    <connections>
+                        <outlet property="imgGambar" destination="5Je-2z-lki" id="aEm-oz-Epl"/>
+                        <outlet property="labelNamaWisata" destination="8QV-SF-i3H" id="UHJ-a3-VF9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NcH-E4-iVu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2370.4000000000001" y="659.82008995502258"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Pantai" width="1000" height="667"/>
+    </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="b0W-2B-jCv"/>
+    </inferredMetricsTieBreakers>
+</document>
